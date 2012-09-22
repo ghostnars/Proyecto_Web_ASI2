@@ -8,10 +8,8 @@ body a:hover {
 a {
   color: #cb5432;
 }
-header,
-footer {
-  background: #2d2d2d;
-}
+header{background: url(../img/bg_header.png);}
+footer{background: #116B77;}
 /* Selection colours (easy to forget) */
 ::selection {
   background: #cb5432;

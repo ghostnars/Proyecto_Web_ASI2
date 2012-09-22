@@ -78,36 +78,46 @@
 		
 		<!-- reply move form -->
 		<script src="js/moveform.js"></script>
+		<script>
+		function displayDate()
+		{
+		var total;
+		var viejo = parseInt(document.getElementById("viejos").value);
+		var mujer = parseInt(document.getElementById("mujeres").value);
+		var hombre = parseInt(document.getElementById("hombres").value);
+		var nino = parseInt(document.getElementById("niños").value);
+		total = (viejo+mujer+hombre+nino)*35;
 		
+		document.getElementById("spTotal").innerHTML=total;
+		}
+		</script>
 	</head>
 	
 	
 	<body class="single">
 	
 		<!-- HEADER -->
-		<header>
+			<header>
 			<div class="wrapper cf">
 				
 				<div id="logo">
-					<a href="index.html"><img  src="img/logo.png" alt="Simpler"></a>
+					<a href="index.html"><h1>El Salvador <span>Adventure</span></h1><!--<img  src="img/logo.png" alt="Simpler">--></a>
 				</div>
 				
 				<!-- nav -->
-				<ul id="nav" class="sf-menu">
-					<li><a href="index.html"><span>HOME</span></a></li>
-					<li class="current-menu-item"><a href="blog.html">BLOG</a></li>
-					<li><a href="page.html">ABOUT</a>
-						<ul>
+				<ul id="nav" class="sf-menu sf-js-enabled sf-shadow">
+					<li class="current-menu-item"><a href="index.html">INICIO</a></li>
+					<!--<li><a href="blog.html">BLOG</a></li>-->
+					<li><a href="page.html">ACERCA DE</a>
+						<!--<ul>
 							<li><a href="page-elements.html">Elements</a></li>
 							<li><a href="page-icons.html">Icons</a></li>
 							<li><a href="page-typography.html">Typography</a></li>
-						</ul>
+						</ul>-->
 					</li>
-					<li><a href="portfolio.html">WORK</a></li>
-					<li><a href="contact.html">CONTACT</a></li>
+					<li><a href="portfolio.html">SERVICIOS</a></li>
+					<li><a href="contact.html">CONT&AacuteCTANOS</a></li>
 				</ul>
-				<div id="combo-holder"></div>
-				<!-- ends nav -->
 
 			</div>
 		</header>
@@ -120,7 +130,7 @@
 			
 			<!-- masthead -->
 			<div class="masthead cf">
-				OUR BLOG
+				PAQUETE TURISTICO
 			</div>
 			<!-- ENDS masthead -->
 			
@@ -305,31 +315,34 @@
         	<aside id="sidebar">
         		
         		<ul>
+	        		
 	        		<li class="block">
-		        		<h4>Text Widget</h4>
-						Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. 
+		        		<h3>Detalle del paquete</h3><br>
+						<ul>
+							<li class="cat-item"><a title="Categoria">Categoria paquete: <span class="post-counter"> Extremo</span></a></li>
+							<li class="cat-item"><a title="Nombre">Nombre del paquete: <span class="post-counter">Ruta las flores</span></a></li>
+							<li class="cat-item"><a title="Cupo">Cupo: <span class="post-counter"> 20 personas</span></a></li>
+							<li class="cat-item"><a title="Guia">Guia Turistico: <span class="post-counter">Indiana Jones</span></a></li>
+							<li class="cat-item"><a title="Fecha de salida">Fecha de salida: <span class="post-counter"> 31/10/2012</span></a></li>
+							<li class="cat-item"><a title="Fecha de regreso">Fecha de regreso: <span class="post-counter"> 1/11/2012</span></a></li>
+							<li class="cat-item"><a title="Hora de salida">Hora de salida: <span class="post-counter"> 8:00 am</span></a></li>
+							<li class="cat-item"><a title="Hora de regreso">Hora de regreso: <span class="post-counter"> 3:00 pm</span></a></li>
+							<li class="cat-item"><a title="Precio">Precio: <span class="post-counter">$35.00 p/persona</span></a></li>
+							</ul>
 	        		</li>
 	        		
 	        		<li class="block">
-		        		<h4>Categories</h4>
+		        		<h4>Reservar</h4>
 						<ul>
-							<li class="cat-item"><a href="#" title="title">Film and video<span class="post-counter"> (2)</span></a></li>
-							<li class="cat-item"><a href="#" title="title">Print<span class="post-counter"> (2)</span></a></li>
-							<li class="cat-item"><a href="#" title="title">Photo and lomo<span class="post-counter"> (2)</span></a></li>
-							<li class="cat-item"><a href="#" title="title">Habitant morbi<span class="post-counter"> (2)</span></a></li>
-							<li class="cat-item"><a href="#" title="title">Film and video<span class="post-counter"> (2)</span></a></li>
-							<li class="cat-item"><a href="#" title="title">Print<span class="post-counter"> (2)</span></a></li>
-							<li class="cat-item"><a href="#" title="title">Photo and lomo<span class="post-counter"> (2)</span></a></li>
-							<li class="cat-item"><a href="#" title="title">Habitant morbi<span class="post-counter"> (2)</span></a></li>
-						</ul>
-	        		</li>
-	        		
-	        		<li class="block">
-		        		<h4>Archives</h4>
-						<ul>
-							<li class="cat-item"><a href="#" title="title">January</a></li>
-							<li class="cat-item"><a href="#" title="title">February</a></li>
-							<li class="cat-item"><a href="#" title="title">March</a></li>
+						
+							<li class="cat-item">Adulto Mayor:&nbsp <input type="number" min="0" max="900" value="0" id="viejos" ></li>
+							<li class="cat-item">Mujeres:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input id="mujeres" type="number" min="0" max="900" value="0"></li>
+							<li class="cat-item">Hombres:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input id="hombres"  type="number" min="0" max="900" value="0"></li>
+							<li class="cat-item">Ni&ntildeos:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <input id="niños" type="number" min="0" max="900" value="0"></li>
+							<input type="button" value="Calcular" id="btTotal" onclick="displayDate()"><br><br>
+							<li class="cat-item"><a title="Precio">Total: $ <span class="post-counter" id="spTotal" ></span></a></li>
+							<input type="button" value="Reservar" id="btTotal" onClick="location.href='login.html'" ><br><br>
+						
 						</ul>
 	        		</li>
         		
